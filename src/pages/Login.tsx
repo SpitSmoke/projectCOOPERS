@@ -18,20 +18,20 @@ const handleSubmit = (e: React.FormEvent) => {
 
 return (
     <div style={styles.container}>
-        <div>
+    <button type="button" style={styles.btnClose}>close</button>
+        <div style={styles.images}>
         <img 
         src={LoginImage}
         alt="Login"
         style={styles.loginImage}
         />
-        </div>
-        <div>
         <img 
         src={TitleImage} 
         alt="Título"
         style={styles.titleImage} 
         />
         </div>
+
     {errorMessage && <p style={styles.error}>{errorMessage}</p>}
     <form onSubmit={handleSubmit} style={styles.loginForm}>
         <div style={styles.inputContainer}>
@@ -52,7 +52,7 @@ return (
             style={styles.input}
         />
         </div>
-        <button type="submit" style={styles.button}>Entrar</button>
+        <button type="submit" style={styles.button}>Sign in</button>
     </form>
     </div>
 );
@@ -60,24 +60,37 @@ return (
 
 const styles: { [key: string]: React.CSSProperties } = {
 container: {
+    fontFamily: 'Monstserrat, sans-serif',
     display: 'flex',
-    flexDirection: 'column', // Organiza os itens em coluna
-    justifyContent: 'center', // Centraliza verticalmente
-    alignItems: 'center', // Centraliza horizontalmente
-    width: '932px',
+    flexDirection: 'column',
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    width: '100%',
     height: '721px',
     top: '117px',
     left: '254px',
-    gap: '0px',
-    opacity: '1', // Corrigido para visibilidade
+},
+btnClose: {
+    width: '55px',
+    height: '64px',
+    fontSize: '20px',
+    fontWeight: '700',
+    lineHeight: '64px',
+    background: 'none', 
+    border: 'none', 
+    cursor: 'pointer',
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    marginRight: '23px'
 },
 images: {
-    display: 'flex', // Adicionei aqui para exibir as imagens lado a lado
-    gap: '20px', // Adicione um espaço entre as imagens, se desejar
+    display: 'flex',  
 },
 loginForm: {
     width: '342px',
     height: '322px',
+
 },
 loginImage: {
     width: '231px',
@@ -92,7 +105,6 @@ inputContainer: {
     textAlign: 'left',
 },
 label: {
-    fontFamily: 'Montserrat, sans-serif',
     marginBottom: '5px',
 },
 input: {
@@ -102,15 +114,18 @@ input: {
     width: '100%',
 },
 button: {
+    fontWeight: '500',
+    fontSize: '24px', 
     width: '300px',
     height: '64px',
+    margin: '0 auto',
     padding: '15px 30px',
-    borderRadius: '5px',
     backgroundColor: '#4AC959',
     color: '#fff',
     border: 'none',
     cursor: 'pointer',
-    fontSize: '16px',
+    lineHeight: '29.26px',
+    alignContent: 'center',
 },
 error: {
     color: 'red',
