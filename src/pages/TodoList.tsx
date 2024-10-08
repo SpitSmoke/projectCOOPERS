@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
-import Login from './Login'; // Certifique-se de que o caminho está correto
+import Login from './Login'; 
+import Logo from '../todo-images/Logo.svg'
+import BG from '../todo-images/BG.svg'
+import Foto from '../todo-images/foto.svg'
+import '../styles/main.scss';
 
 const TodoList: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) => {
-    const [showLogin, setShowLogin] = useState(false); // Estado para controlar a visibilidade do modal de login
+    const [showLogin, setShowLogin] = useState(false); 
 
     // Função para abrir o modal de login
     const handleLoginOpen = () => {
@@ -15,60 +19,89 @@ const TodoList: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) 
     };
 
     return (
-        <div>
+        <div className='container'>
             {/* Seção Hero */}
-            <header style={styles.hero}>
-                <h1 style={styles.title}>Bem-vindo à sua lista de tarefas!</h1>
-                <button style={styles.loginButton} onClick={handleLoginOpen}>
-                    Entrar
+            <div className='hero'>
+            <div className='hero-top'>
+            <img className='top-logo'
+                alt="Logo"
+                src={Logo} 
+                />
+
+                <button 
+                    onClick={handleLoginOpen}
+                    className='hero-btn'> Account
                 </button>
-            </header>
+
+                <div className='hero-content'>
+                    <div>
+                        <div className='content-writte--button'>
+                            <h1 className='content-title'>Organize <br /><span>your daily jobs</span></h1>
+                            <br />
+                            <p className='content-write'>The only way to get things done</p>
+                        <button className='content-button'>
+                            Go to To-do list
+                        </button>
+                        <div className='content-image'>
+                            <img src={Foto} />
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className='hero-bg'>
+                    <img className='hero-bg-image'
+                        alt="Background"
+                        src={BG} />
+                </div>
+            </div>
+        </div>
 
             {/* Exibe o modal de Login se o estado showLogin for true */}
             {showLogin && <Login onClose={handleLoginClose} onLoginSuccess={onLoginSuccess} />}
 
             {/* Aqui você pode adicionar a lógica da sua lista de tarefas */}
-            <div style={styles.todoList}>
-                <h2>Suas Tarefas</h2>
-                {/* Adicione a lógica e os componentes para sua lista de tarefas aqui */}
-            </div>
+
         </div>
     );
 };
 
 // Estilos
-const styles: Record<string, React.CSSProperties> = {
-    hero: {
-        display: 'flex',
-        flexDirection: 'column' as 'column', // Forçando o tipo para 'column'
-        alignItems: 'center',
-        justifyContent: 'center',
-        height: '300px',
-        backgroundColor: '#4AC959',
-        color: '#fff',
-        position: 'relative',
-        padding: '20px',
-    },
-    title: {
-        fontSize: '36px',
-        margin: '0',
-    },
-    loginButton: {
-        position: 'absolute' as 'absolute', // Forçando o tipo para 'absolute'
-        top: '20px',
-        right: '20px',
-        backgroundColor: '#fff',
-        color: '#4AC959',
-        border: 'none',
-        borderRadius: '5px',
-        padding: '10px 20px',
-        cursor: 'pointer',
-        fontSize: '16px',
-    },
-    todoList: {
-        padding: '20px',
-        // Adicione mais estilos conforme necessário
-    },
-};
+// const styles: Record<string, React.CSSProperties> = {
+//     hero: {
+//         display: 'flex',
+//         position: 'relative',
+//         width: '100%',
+//         height: '734px',
+//         top: '24px',
+//         border: '1px solid red',    
+//         color: '#fff',
+//     },
+//     top: {
+//         // justifyContent: 'space-between',
+//         alignItems: 'center',
+//     },
+//     logo: {
+//     width: '217px',
+//     height: '50px',
+//     top: '54px',
+//     left: '80px'
+//     },
+//     loginButton: {
+//         position: 'absolute', 
+//         width: '120px',
+//         height: '40px',
+//         top: '54px',
+//         left: '1140px',
+//         marginRight: '80px',
+//         backgroundColor: '#000000',
+//         color: '#fff',
+//         fontFamily: 'Poppins, sans-serif',
+//         fontWeight: '600',
+//         fontSize: '14px',
+//         border: 'none',
+//         cursor: 'pointer',
+//     },
+// };
 
 export default TodoList;

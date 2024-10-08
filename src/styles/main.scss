@@ -1,0 +1,12 @@
+// Arquivo principal que importa todos os outros
+// Importando variáveis e mixins
+@import 'variables';
+@import 'mixins';
+
+// Importando reset global
+@import 'reset';
+
+// Estilos da tela TodoList
+@import 'todoList';
+@import 'hero';
+

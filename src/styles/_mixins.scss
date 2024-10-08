@@ -1,0 +1,31 @@
+// Mixins reutilizáveis (ex.: media queries)
+@mixin responsive($breakpoint) {
+    @if $breakpoint == small {
+    @media screen and (max-width: 1360px) {
+        // Estilos para telas menores ou iguais a 1360px
+        body {
+          font-size: 14px; /* Diminui um pouco o tamanho da fonte */
+        }
+
+        .hero {
+          width: 100%; /* Fazer o hero ocupar a largura total */
+          height: auto; /* Deixar a altura mais flexível */
+        padding: 20px;
+        }
+
+        .hero-img {
+        width: 150px; 
+        height: auto;
+        }
+
+        .hero-btn {
+        width: 100px; 
+        font-size: 0.9rem; 
+        }
+
+        .hero-header h1 {
+          font-size: 2rem; /* Tamanho da fonte menor */
+        }
+    }
+    }
+}

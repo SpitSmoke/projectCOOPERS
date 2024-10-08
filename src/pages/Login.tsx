@@ -114,7 +114,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         left: 0,
         width: '100%',
         height: '100%',
-        backgroundColor: 'rgba(0, 0, 0, 0.5)',
+        backgroundColor: 'rgba(0, 0, 0, 0.8)',
     },
     btnClose: {
         position: 'absolute',
@@ -135,8 +135,8 @@ const styles: { [key: string]: React.CSSProperties } = {
         alignItems: 'center', 
         backgroundColor: '#fff',
         padding: '20px',
-        borderRadius: '0px', // Borda arredondada removida
-        width: '932px', // Novo tamanho
+        borderRadius: '0px', 
+        width: '932px', 
         height: '721px', 
         zIndex: 10, 
         position: 'relative',
@@ -172,7 +172,7 @@ const styles: { [key: string]: React.CSSProperties } = {
         borderRadius: '10px',
         border: '1px solid #959595',
         padding: '10px',
-        marginBottom: '30px'
+        marginBottom: '30px',
     },
     input: {
         width: '342px',
@@ -198,6 +198,7 @@ const styles: { [key: string]: React.CSSProperties } = {
     error: {
         color: 'red',
         fontSize: '21px',
+        marginBottom: '30px'
     },
 };
 

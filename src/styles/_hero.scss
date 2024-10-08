@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza a div hero horizontalmente */
+    align-items: center; /* Centraliza a div hero verticalmente */
+    height: 100vh; /* Faz o container ocupar a altura total da tela */
+}
+
+.hero {
+    position: relative;
+    top: 0  ;
+    width: 1440px;
+    height: 734px; /* Ajuste conforme a largura desejada para o hero */
+    display: flex;
+    justify-content: center; /* Centraliza o conteúdo da div hero */
+    align-items: center;
+    margin-top: 24px;
+    border: 1px solid blue;
+}
+
+.hero-top {
+    position: absolute;
+    display: flex; /* Flexbox para alinhar imagem e botão */
+    justify-content: space-between; /* Separar a imagem e o botão */
+    align-items: center; /* Centralizar verticalmente a imagem e o botão */
+    width: 1280px;
+    height: 50px;
+    margin: 30px 80px;
+    top: 0;
+    right: 0;
+}
+
+.top-logo {
+    width: 217px; 
+    height: 50px;
+}
+
+.hero-content {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    width: 1280px;
+    height: 481.52px;
+    top: 156px;
+    left: 80px;
+    border: 1px solid red;
+    font-family: $fontMontserrat;
+}
+.container-writte--button {
+    display: flex;
+    width: 621px;
+    height: 319px;
+    border: 1px solid red;
+}
+.content-title {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 64px;
+}
+
+.content-write {
+    font-family: $fontMontserrat;
+    font-size: 24px;
+    font-weight: 600;
+    color: $black;
+}
+
+.content-button {
+    font-family: $fontMontserrat;
+    font-weight: 600;
+    line-height: 29.26px;
+    text-align: center;
+    width: 300px;
+    height: 64px;
+    border-radius: 10px;
+    color: $white;
+    background-color: $green;
+}
+
+span {
+    font-size: 80px;
+    font-weight: 700;
+    line-height: 64px;
+    color: $green;
+    font-family: $fontMontserrat;
+}
+
+
+.content-image {
+    position: absolute;
+    width: 443px;
+    height: 481.52px;
+    margin-bottom: 22px;
+    left: 917px;
+    z-index: 1;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 715px;
+}
+
+.hero-bg-image {
+    position: absolute;
+    margin-bottom: 80px;
+    width: 640px;
+    height: 734px;
+}
+
+.hero-btn {
+    position: absolute;
+    // top: 50%; 
+    padding: 10px 20px;
+    background-color: $black;
+    right: 1px;
+    // transform: translate(-50%);
+    color: $white;
+    border: none;
+    cursor: pointer;    
+    z-index: 2;
+    // // margin-top: 50px;
+    margin-left: 1;
+}
