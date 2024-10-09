@@ -1,1 +1,21 @@
-// Estilos específicos para a tela TodoList
+.container-todo-title {
+    position: absolute;
+    display: flex;
+    width: 1440px;
+    top: 713px;
+    height: 420px;
+    border: 1px solid red;
+}
+.todo-title {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+.todo-image {
+    position: absolute;
+    top: 50px;
+    left: 800px;
+    width: 1440px;
+    top: 713px;
+    height: 420px;
+}

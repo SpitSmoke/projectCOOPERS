@@ -3,7 +3,10 @@ import Login from './Login';
 import Logo from '../todo-images/Logo.svg'
 import BG from '../todo-images/BG.svg'
 import Foto from '../todo-images/foto.svg'
+import Icon from '../todo-images/icon-scroll.svg'
+import BGTodo from '../todo-images/BG-todo.svg'
 import '../styles/main.scss';
+
 
 const TodoList: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) => {
     const [showLogin, setShowLogin] = useState(false); 
@@ -34,19 +37,19 @@ const TodoList: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) 
                 </button>
 
                 <div className='hero-content'>
-                    <div>
-                        <div className='content-writte--button'>
-                            <h1 className='content-title'>Organize <br /><span>your daily jobs</span></h1>
-                            <br />
+                        <div className='content-container'>
+                            <h1 className='content-title'>Organize
+                            <span>your daily jobs</span></h1>
                             <p className='content-write'>The only way to get things done</p>
                         <button className='content-button'>
                             Go to To-do list
                         </button>
                         <div className='content-image'>
-                            <img src={Foto} />
+                            <img src={Foto} 
+                                alt='Escritorio'
+                                title='Office'/>
                         </div>
                         </div>
-                    </div>
                 </div>
 
                 <div className='hero-bg'>
@@ -54,9 +57,27 @@ const TodoList: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) 
                         alt="Background"
                         src={BG} />
                 </div>
+                <div className='hero-arrow'>
+                <img src={Icon} 
+                alt="Icone" 
+                title="Icone"
+/>
+                </div>
             </div>
         </div>
-
+        <div className='container-todo-title'>
+            <div className='todo-image'>
+                <img src={BGTodo} />
+            </div>
+            <div className='todo-title'>
+                <h1>My Todo List</h1>
+                <ul>
+                    <li>Task 1</li>
+                    <li>Task 2</li>
+                    <li>Task 3</li>
+                </ul>
+            </div>
+        </div>
             {/* Exibe o modal de Login se o estado showLogin for true */}
             {showLogin && <Login onClose={handleLoginClose} onLoginSuccess={onLoginSuccess} />}
 
@@ -64,7 +85,7 @@ const TodoList: React.FC<{ onLoginSuccess: () => void }> = ({ onLoginSuccess }) 
 
         </div>
     );
-};
+}
 
 // Estilos
 // const styles: Record<string, React.CSSProperties> = {
